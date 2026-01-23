@@ -3,9 +3,11 @@
 -- Add any additional options here
 
 vim.g.lazyvim_colorscheme = "vscode"
+-- vim.g.lazyvim_colorscheme = "cursor-dark"
 vim.g.lazyvim_check_order = false
 vim.g.autoformat = false
-
+-- close spell check
+vim.opt.spell = false
 -- Set tab and indentation settings
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
