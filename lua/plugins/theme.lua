@@ -3,6 +3,7 @@ return {
     "Mofiqul/vscode.nvim",
     lazy = false,
     priority = 1000,
+    enabled = vim.g.lazyvim_colorscheme == "vscode",
     opts = {
       style = "dark",
       transparent = false,
@@ -26,7 +27,12 @@ return {
         NormalFloat = { bg = c.vscToolTipBg },
         Pmenu = { bg = c.vscToolTipBg },
         PmenuSel = { bg = c.vscDarkBlue, fg = c.vscWhite, bold = true },
-     }
+        -- Disable spell check highlights
+        SpellBad = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
+        SpellCap = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
+        SpellRare = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
+        SpellLocal = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
+      }
       require("vscode").setup(opts)
       require("vscode").load()
       vim.api.nvim_set_hl(0, "SnacksExplorerSelected", { bg = "#007ACC", fg = "#FFFFFF", bold = true })
@@ -34,12 +40,13 @@ return {
       vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = "#FFFFFF", bold = true })
     end,
   },
-  -- {
-  --   "ydkulks/cursor-dark.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme("cursor-dark")
-  --   end,
-  -- },
+  {
+    "ydkulks/cursor-dark.nvim",
+    lazy = false,
+    priority = 1000,
+    enabled = vim.g.lazyvim_colorscheme == "cursor-dark",
+    config = function()
+      vim.cmd.colorscheme("cursor-dark")
+    end,
+  },
 }
