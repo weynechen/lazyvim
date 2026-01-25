@@ -38,6 +38,11 @@ return {
       vim.api.nvim_set_hl(0, "SnacksExplorerSelected", { bg = "#007ACC", fg = "#FFFFFF", bold = true })
       vim.api.nvim_set_hl(0, "SnacksExplorerCursorLine", { bg = "#282A36" })
       vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = "#FFFFFF", bold = true })
+      -- Flash.nvim colors with high contrast
+      vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#FF007C", fg = "#000000", bold = true })
+      vim.api.nvim_set_hl(0, "FlashMatch", { bg = "#3E68D7", fg = "#FFFFFF" })
+      vim.api.nvim_set_hl(0, "FlashCurrent", { bg = "#FF9E64", fg = "#000000" })
+      vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = "#545C7E" })
     end,
   },
   {
