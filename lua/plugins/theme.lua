@@ -14,19 +14,19 @@ return {
     },
     config = function(_, opts)
       local c = require('vscode.colors').get_colors()
-      opts.color_overrides = {
-        vscLineNumber = '#858585',
-        vscCursorLine = '#282A36',
-      }
+      -- opts.color_overrides = {
+      --   vscLineNumber = '#858585',
+      --   vscCursorLine = '#282A36',
+      -- }
       opts.group_overrides = {
-        CursorLine = { bg = c.vscCursorLine },
-        CursorLineNr = { fg = c.vscWhite, bold = true },
-        Visual = { bg = c.vscDarkBlue },
-        Search = { bg = c.vscDarkYellow, fg = c.vscNone },
-        IncSearch = { bg = c.vscDarkCyan, fg = c.vscNone },
-        NormalFloat = { bg = c.vscToolTipBg },
-        Pmenu = { bg = c.vscToolTipBg },
-        PmenuSel = { bg = c.vscDarkBlue, fg = c.vscWhite, bold = true },
+        -- CursorLine = { bg = c.vscCursorLine },
+        -- CursorLineNr = { fg = c.vscWhite, bold = true },
+        -- Visual = { bg = c.vscDarkBlue },
+        -- Search = { bg = c.vscDarkYellow, fg = c.vscNone },
+        -- IncSearch = { bg = c.vscDarkCyan, fg = c.vscNone },
+        -- NormalFloat = { bg = c.vscToolTipBg },
+        -- Pmenu = { bg = c.vscToolTipBg },
+        -- PmenuSel = { bg = c.vscDarkBlue, fg = c.vscWhite, bold = true },
         -- Disable spell check highlights
         SpellBad = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
         SpellCap = { fg = "NONE", bg = "NONE", sp = "NONE", underline = false },
@@ -35,9 +35,14 @@ return {
       }
       require("vscode").setup(opts)
       require("vscode").load()
-      vim.api.nvim_set_hl(0, "SnacksExplorerSelected", { bg = "#007ACC", fg = "#FFFFFF", bold = true })
-      vim.api.nvim_set_hl(0, "SnacksExplorerCursorLine", { bg = "#282A36" })
-      vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = "#FFFFFF", bold = true })
+      -- Snacks picker highlights
+      -- vim.api.nvim_set_hl(0, "SnacksExplorerSelected", { bg = "#007ACC", fg = "#FFFFFF", bold = true })
+      -- vim.api.nvim_set_hl(0, "SnacksExplorerCursorLine", { bg = "#282A36" })
+      -- vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#2A2D3E" })  -- Current file highlight when picker not focused
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "#282A36" })  -- Restore CursorLine for general use
+      
+      -- Bufferline highlights moved to lua/plugins/bufferline.lua
+      
       -- Flash.nvim colors with high contrast
       vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#FF007C", fg = "#000000", bold = true })
       vim.api.nvim_set_hl(0, "FlashMatch", { bg = "#3E68D7", fg = "#FFFFFF" })
