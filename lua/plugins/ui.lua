@@ -3,6 +3,10 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      -- Increase big file threshold (default: 1.5MB)
+      bigfile = {
+        size = 5 * 1024 * 1024, -- 5MB
+      },
       dashboard = {
         preset = {
           header = [[
