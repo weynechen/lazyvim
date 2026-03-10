@@ -11,10 +11,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- disable cmake-language-server (has dependency issues)
         cmake = false,
         -- use neocmakelsp instead
-        neocmakelsp = {},
+        -- neocmakelsp = {},
       },
     },
     init = function()
